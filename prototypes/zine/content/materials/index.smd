@@ -1,7 +1,7 @@
 ---
 .title = "Материалы",
 .description = "Уроки, заметки и практические шаблоны.",
-.author = "Elga Linetskaya",
+.author = "Учитель Эльга",
 .date = @date("2026-01-28T00:00:00"),
 .layout = "list.shtml",
 .draft = false,

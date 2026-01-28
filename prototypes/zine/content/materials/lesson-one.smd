@@ -1,7 +1,7 @@
 ---
 .title = "Урок: текст и структура",
 .description = "Зачем нужен план и как сделать текст читабельным.",
-.author = "Elga Linetskaya",
+.author = "Учитель Эльга",
 .date = @date("2026-01-20T00:00:00"),
 .layout = "page.shtml",
 .draft = false,

@@ -1,7 +1,7 @@
 ---
 .title = "Практика: смысл и подача",
 .description = "Как подбирать примеры и держать стиль на дистанции.",
-.author = "Elga Linetskaya",
+.author = "Учитель Эльга",
 .date = @date("2026-01-22T00:00:00"),
 .layout = "page.shtml",
 .draft = false,
