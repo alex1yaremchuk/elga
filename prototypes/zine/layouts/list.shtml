@@ -1,16 +1,153 @@
-<extend template="base.shtml">
-  <title id="title" :text="$page.title.suffix(' - ', $site.title)"></title>
-  <div class="intro">
-    <h1 :text="$page.title"></h1>
-    <div :html="$page.content()"></div>
-  </div>
-  <div class="cards" :loop="$page.subpages()">
-    <article class="card">
-      <h2>
-        <a href="$loop.it.link()" :text="$loop.it.title"></a>
-      </h2>
-      <p :text="$loop.it.description"></p>
-      <a class="button" href="$loop.it.link()">???????</a>
-    </article>
-  </div>
-</extend>
+<!doctype html>
+<html lang="ru">
+  <head id="head">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title id="title" :text="$page.title.suffix(' - ', $site.title)"></title>
+    <style>
+      :root {
+        --bg: #f6f3ef;
+        --text: #1f1f1f;
+        --muted: #6b6b6b;
+        --accent: #c14b2c;
+        --border: #e3ddd6;
+        --card: #ffffff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--text);
+        background: var(--bg);
+        font-family: "Spectral", "Iowan Old Style", "Book Antiqua", serif;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .site-header {
+        border-bottom: 1px solid var(--border);
+        background: #fbf9f7;
+      }
+      .site-header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 20px 24px;
+      }
+      .brand a {
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      .site-nav {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .site-main {
+        padding: 40px 0 60px;
+      }
+      h1, h2, h3 {
+        line-height: 1.25;
+        margin: 0 0 12px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      p {
+        margin: 0 0 16px;
+      }
+      .intro {
+        margin-bottom: 24px;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 18px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      }
+      .card p {
+        color: var(--muted);
+      }
+      .button {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.95rem;
+      }
+      .back {
+        display: inline-flex;
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+      }
+      .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 24px 0;
+      }
+      .site-footer {
+        border-top: 1px solid var(--border);
+        padding: 24px 0 36px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body id="body">
+    <header class="site-header">
+      <div class="container">
+        <div class="brand">
+          <a href="$site.link()" :text="$site.title"></a>
+        </div>
+        <nav class="site-nav">
+          <a href="$site.link()">???????</a>
+          <a href="$site.page('materials').link()">?????????</a>
+        </nav>
+      </div>
+    </header>
+    <main class="site-main">
+      <div class="container">
+        <div class="intro">
+          <h1 :text="$page.title"></h1>
+          <div :html="$page.content()"></div>
+        </div>
+        <div class="cards" :loop="$page.subpages()">
+          <article class="card">
+            <h2>
+              <a href="$loop.it.link()" :text="$loop.it.title"></a>
+            </h2>
+            <p :text="$loop.it.description"></p>
+            <a class="button" href="$loop.it.link()">???????</a>
+          </article>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>???????? ????? ??? ??????? ????? ????????.</p>
+      </div>
+    </footer>
+  </body>
+</html>

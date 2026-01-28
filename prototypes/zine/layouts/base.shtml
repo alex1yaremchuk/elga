@@ -3,7 +3,7 @@
   <head id="head">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title id="title"><super></title>
+    <title id="title" :text="$page.title.suffix(' - ', $site.title)"></title>
     <style>
       :root {
         --bg: #f6f3ef;
@@ -114,7 +114,6 @@
         color: var(--muted);
       }
     </style>
-    <super>
   </head>
   <body id="body">
     <header class="site-header">
@@ -130,7 +129,10 @@
     </header>
     <main class="site-main">
       <div class="container">
-        <super>
+        <div class="intro">
+          <h1 :text="$page.title"></h1>
+          <div :html="$page.content()"></div>
+        </div>
       </div>
     </main>
     <footer class="site-footer">
