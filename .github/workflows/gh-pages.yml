@@ -40,7 +40,7 @@ jobs:
           cp -a prototypes/zine/public/. public/zine/
 
           (cd prototypes/hugo && hugo --destination ../../public/hugo)
-          (cd prototypes/zola && zola build --output-dir ../../public/zola)
+          (cd prototypes/zola && zola build --output-dir ../../public/zola --force)
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
