@@ -1,4 +1,4 @@
-baseURL = "https://example.com/hugo/"
+baseURL = "https://alex1yaremchuk.github.io/elga/hugo/"
 languageCode = "en-us"
 title = "Учитель Эльга — Hugo Prototype"
 relativeURLs = true

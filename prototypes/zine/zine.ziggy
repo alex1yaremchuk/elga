@@ -1,6 +1,7 @@
 Site {
   .title = "Учитель Эльга — Zine Prototype",
-  .host_url = "https://example.com",
+  .host_url = "https://alex1yaremchuk.github.io",
+  .url_path_prefix = "elga/zine/",
   .content_dir_path = "content",
   .layouts_dir_path = "layouts",
   .assets_dir_path = "assets",
