@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <title>{{ block "title" . }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
     <style>
       :root {
         --bg: #f6f3ef;
@@ -119,17 +119,17 @@
     <header class="site-header">
       <div class="container">
         <div class="brand">
-          <a href="{{ get_url(path="/") }}">{{ config.title }}</a>
+          <a href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
         </div>
         <nav class="site-nav">
-          <a href="{{ get_url(path="/") }}">???????</a>
-          <a href="{{ get_url(path="/materials/") }}">?????????</a>
+          <a href="{{ "/" | relURL }}">???????</a>
+          <a href="{{ "/materials/" | relURL }}">?????????</a>
         </nav>
       </div>
     </header>
     <main class="site-main">
       <div class="container">
-        {% block content %}{% endblock content %}
+        {{ block "main" . }}{{ end }}
       </div>
     </main>
     <footer class="site-footer">

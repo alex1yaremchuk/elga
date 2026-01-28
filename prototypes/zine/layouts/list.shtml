@@ -1,0 +1,16 @@
+<extend template="base.shtml">
+  <title id="title" :text="$page.title.suffix(' - ', $site.title)"></title>
+  <div class="intro">
+    <h1 :text="$page.title"></h1>
+    <div :html="$page.content()"></div>
+  </div>
+  <div class="cards" :loop="$page.subpages()">
+    <article class="card">
+      <h2>
+        <a href="$loop.it.link()" :text="$loop.it.title"></a>
+      </h2>
+      <p :text="$loop.it.description"></p>
+      <a class="button" href="$loop.it.link()">???????</a>
+    </article>
+  </div>
+</extend>

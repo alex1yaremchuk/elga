@@ -3,6 +3,10 @@
 {% block title %}{{ config.title }}{% endblock title %}
 
 {% block content %}
-  <h1>{{ config.title }}</h1>
-  {{ section.content | safe }}
+  <div class="intro">
+    <h1>{{ config.title }}</h1>
+    {{ section.content | safe }}
+  </div>
+  <div class="divider"></div>
+  <a class="button" href="{{ get_url(path="/materials/") }}">??????? ? ??????????</a>
 {% endblock content %}
