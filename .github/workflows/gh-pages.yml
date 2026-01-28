@@ -1,0 +1,59 @@
+name: Build Prototypes and Deploy Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: kristoff-it/setup-zine@v1
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: zola
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "latest"
+          extended: true
+      - name: Build prototypes
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf public
+          mkdir -p public/zine public/hugo public/zola
+
+          rm -rf prototypes/zine/public
+          (cd prototypes/zine && zine release)
+          cp -a prototypes/zine/public/. public/zine/
+
+          (cd prototypes/hugo && hugo --destination ../../public/hugo)
+          (cd prototypes/zola && zola build --output-dir ../../public/zola)
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
