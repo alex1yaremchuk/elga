@@ -1,6 +1,7 @@
 ---
-title: "Zine Prototype"
-description: "Prototype landing page built with Zine."
+.title = "Zine Prototype",
+.description = "Prototype landing page built with Zine.",
+.layout = "home.shtml",
 ---
 
 This is a minimal placeholder page for the Zine-based prototype.
