@@ -122,14 +122,14 @@
           <a href="$site.link()" :text="$site.title"></a>
         </div>
         <nav class="site-nav">
-          <a href="$site.link()">???????</a>
-          <a href="$site.page('materials').link()">?????????</a>
+          <a href="$site.link()">Главная</a>
+          <a href="$site.page('materials').link()">Материалы</a>
         </nav>
       </div>
     </header>
     <main class="site-main">
       <div class="container">
-        <a class="back" href="$page.parentSection().link()">????? ? ??????</a>
+        <a class="back" href="$page.parentSection().link()">Назад к списку</a>
         <article>
           <h1 :text="$page.title"></h1>
           <div :html="$page.content()"></div>
@@ -138,7 +138,7 @@
     </main>
     <footer class="site-footer">
       <div class="container">
-        <p>???????? ????? ??? ??????? ????? ????????.</p>
+        <p>Учитель Эльга. Все права защищены.</p>
       </div>
     </footer>
   </body>

@@ -4,7 +4,7 @@
 
 {% block content %}
   {% set list = get_section(path="materials/_index.md") %}
-  <a class="back" href="{{ list.permalink | safe }}">????? ? ??????</a>
+  <a class="back" href="{{ list.permalink | safe }}">Назад к списку</a>
   <article>
     <h1>{{ page.title }}</h1>
     {{ page.content | safe }}

@@ -122,8 +122,8 @@
           <a href="$site.link()" :text="$site.title"></a>
         </div>
         <nav class="site-nav">
-          <a href="$site.link()">???????</a>
-          <a href="$site.page('materials').link()">?????????</a>
+          <a href="$site.link()">Главная</a>
+          <a href="$site.page('materials').link()">Материалы</a>
         </nav>
       </div>
     </header>
@@ -137,7 +137,7 @@
     </main>
     <footer class="site-footer">
       <div class="container">
-        <p>???????? ????? ??? ??????? ????? ????????.</p>
+        <p>Учитель Эльга. Все права защищены.</p>
       </div>
     </footer>
   </body>
