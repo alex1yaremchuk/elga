@@ -1,4 +1,4 @@
-base_url = "https://example.com/zola/"
+base_url = "https://alex1yaremchuk.github.io/elga/zola/"
 title = "Учитель Эльга — Zola Prototype"
 compile_sass = false
 build_search_index = false
