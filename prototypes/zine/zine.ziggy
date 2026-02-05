@@ -1,5 +1,5 @@
 Site {
-  .title = "Учитель Эльга — Zine Prototype",
+  .title = "Эльга Линецкая",
   .host_url = "https://alex1yaremchuk.github.io",
   .url_path_prefix = "elga/zine/",
   .content_dir_path = "content",

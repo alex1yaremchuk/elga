@@ -3,10 +3,84 @@
 {% block title %}{{ config.title }}{% endblock title %}
 
 {% block content %}
-  <div class="intro">
-    <h1>{{ config.title }}</h1>
-    {{ section.content | safe }}
-  </div>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Русская филология и поэтический перевод</p>
+      <h1>{{ section.title }}</h1>
+      <div class="lead">
+        {{ section.content | safe }}
+      </div>
+      <div class="hero-meta">
+        <span>1909–1997</span>
+        <span>Санкт-Петербург</span>
+        <span>Перевод и педагогика</span>
+      </div>
+      <div class="actions">
+        <a class="button" href="{{ get_url(path="/materials/") }}">Материалы</a>
+        <a class="ghost" href="#bio">Краткая биография</a>
+      </div>
+    </div>
+    <figure class="portrait">
+      <img src="{{ get_url(path="images/elga-linetskaya.jpg") }}" alt="Эльга Линецкая">
+      <figcaption>Фото для страницы. Нужна замена на подтвержденный источник.</figcaption>
+    </figure>
+  </section>
+
+  <section id="bio" class="grid-two">
+    <div class="panel">
+      <h2>Ключевые вехи</h2>
+      <ul class="facts">
+        <li>
+          <span class="label">1909</span>
+          Родилась в Санкт-Петербурге, где позже завершила жизненный путь.
+        </li>
+        <li>
+          <span class="label">Филолог и переводчица</span>
+          Известна работой с французской лирикой XIX–XX веков.
+        </li>
+        <li>
+          <span class="label">Семинар перевода</span>
+          Вела семинар художественного перевода в Ленинградском Доме писателей около 35 лет.
+        </li>
+        <li>
+          <span class="label">Школа</span>
+          Ее называли «Ахматовой русского перевода».
+        </li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>Направления работы</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Французская поэзия</h3>
+          <p>Переводы классиков и модернистов, тонкая работа с ритмом и интонацией.</p>
+        </div>
+        <div class="card">
+          <h3>Школа перевода</h3>
+          <p>Долгие годы работы со студентами и молодыми переводчиками в формате семинара.</p>
+        </div>
+        <div class="card">
+          <h3>Редакторский слух</h3>
+          <p>Внимание к точности, образности и культурному контексту оригинала.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="divider"></div>
-  <a class="button" href="{{ get_url(path="/materials/") }}">Перейти к материалам</a>
+
+  <section class="grid-two">
+    <div class="panel">
+      <h2>Фраза о ней</h2>
+      <p class="quote">Ее называли «Ахматовой русского перевода».</p>
+    </div>
+    <div class="panel">
+      <h2>Материалы и наброски</h2>
+      <p>Собрание заметок, подборок и учебных материалов для будущих публикаций.</p>
+      <div class="actions">
+        <a class="button" href="{{ get_url(path="/materials/") }}">Открыть материалы</a>
+        <a class="ghost" href="{{ get_url(path="/materials/") }}">Смотреть список</a>
+      </div>
+    </div>
+  </section>
 {% endblock content %}
