@@ -1,4 +1,4 @@
 baseURL = "https://alex1yaremchuk.github.io/elga/hugo/"
 languageCode = "ru"
 title = "Эльга Линецкая"
-relativeURLs = true
+relativeURLs = false
